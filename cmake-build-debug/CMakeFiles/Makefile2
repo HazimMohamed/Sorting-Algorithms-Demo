@@ -65,39 +65,39 @@ CMAKE_SOURCE_DIR = /Users/Hazim/CLionProjects/DataStructuresAssignment5
 CMAKE_BINARY_DIR = /Users/Hazim/CLionProjects/DataStructuresAssignment5/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/DataStructureAssignment4.dir
+# Target rules for target CMakeFiles/DataStructureAssignment5.dir
 
 # All Build rule for target.
-CMakeFiles/DataStructureAssignment4.dir/all:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/depend
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Hazim/CLionProjects/DataStructuresAssignment5/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target DataStructureAssignment4"
-.PHONY : CMakeFiles/DataStructureAssignment4.dir/all
+CMakeFiles/DataStructureAssignment5.dir/all:
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/depend
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Hazim/CLionProjects/DataStructuresAssignment5/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target DataStructureAssignment5"
+.PHONY : CMakeFiles/DataStructureAssignment5.dir/all
 
 # Include target in all.
-all: CMakeFiles/DataStructureAssignment4.dir/all
+all: CMakeFiles/DataStructureAssignment5.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/DataStructureAssignment4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Hazim/CLionProjects/DataStructuresAssignment5/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DataStructureAssignment4.dir/all
+CMakeFiles/DataStructureAssignment5.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Hazim/CLionProjects/DataStructuresAssignment5/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DataStructureAssignment5.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Hazim/CLionProjects/DataStructuresAssignment5/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/DataStructureAssignment4.dir/rule
+.PHONY : CMakeFiles/DataStructureAssignment5.dir/rule
 
 # Convenience name for target.
-DataStructureAssignment4: CMakeFiles/DataStructureAssignment4.dir/rule
+DataStructureAssignment5: CMakeFiles/DataStructureAssignment5.dir/rule
 
-.PHONY : DataStructureAssignment4
-
-# clean rule for target.
-CMakeFiles/DataStructureAssignment4.dir/clean:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/clean
-.PHONY : CMakeFiles/DataStructureAssignment4.dir/clean
+.PHONY : DataStructureAssignment5
 
 # clean rule for target.
-clean: CMakeFiles/DataStructureAssignment4.dir/clean
+CMakeFiles/DataStructureAssignment5.dir/clean:
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/clean
+.PHONY : CMakeFiles/DataStructureAssignment5.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/DataStructureAssignment5.dir/clean
 
 .PHONY : clean
 

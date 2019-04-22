@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named DataStructureAssignment4
+# Target rules for targets named DataStructureAssignment5
 
 # Build rule for target.
-DataStructureAssignment4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DataStructureAssignment4
-.PHONY : DataStructureAssignment4
+DataStructureAssignment5: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DataStructureAssignment5
+.PHONY : DataStructureAssignment5
 
 # fast build rule for target.
-DataStructureAssignment4/fast:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/build
-.PHONY : DataStructureAssignment4/fast
+DataStructureAssignment5/fast:
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/build
+.PHONY : DataStructureAssignment5/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,62 +147,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/BinaryTree.o: src/BinaryTree.cpp.o
+src/Sorting.o: src/Sorting.cpp.o
 
-.PHONY : src/BinaryTree.o
-
-# target to build an object file
-src/BinaryTree.cpp.o:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/src/BinaryTree.cpp.o
-.PHONY : src/BinaryTree.cpp.o
-
-src/BinaryTree.i: src/BinaryTree.cpp.i
-
-.PHONY : src/BinaryTree.i
-
-# target to preprocess a source file
-src/BinaryTree.cpp.i:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/src/BinaryTree.cpp.i
-.PHONY : src/BinaryTree.cpp.i
-
-src/BinaryTree.s: src/BinaryTree.cpp.s
-
-.PHONY : src/BinaryTree.s
-
-# target to generate assembly for a file
-src/BinaryTree.cpp.s:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/src/BinaryTree.cpp.s
-.PHONY : src/BinaryTree.cpp.s
-
-src/ItemType.o: src/ItemType.cpp.o
-
-.PHONY : src/ItemType.o
+.PHONY : src/Sorting.o
 
 # target to build an object file
-src/ItemType.cpp.o:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/src/ItemType.cpp.o
-.PHONY : src/ItemType.cpp.o
+src/Sorting.cpp.o:
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/src/Sorting.cpp.o
+.PHONY : src/Sorting.cpp.o
 
-src/ItemType.i: src/ItemType.cpp.i
+src/Sorting.i: src/Sorting.cpp.i
 
-.PHONY : src/ItemType.i
+.PHONY : src/Sorting.i
 
 # target to preprocess a source file
-src/ItemType.cpp.i:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/src/ItemType.cpp.i
-.PHONY : src/ItemType.cpp.i
+src/Sorting.cpp.i:
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/src/Sorting.cpp.i
+.PHONY : src/Sorting.cpp.i
 
-src/ItemType.s: src/ItemType.cpp.s
+src/Sorting.s: src/Sorting.cpp.s
 
-.PHONY : src/ItemType.s
+.PHONY : src/Sorting.s
 
 # target to generate assembly for a file
-src/ItemType.cpp.s:
-	$(MAKE) -f CMakeFiles/DataStructureAssignment4.dir/build.make CMakeFiles/DataStructureAssignment4.dir/src/ItemType.cpp.s
-.PHONY : src/ItemType.cpp.s
+src/Sorting.cpp.s:
+	$(MAKE) -f CMakeFiles/DataStructureAssignment5.dir/build.make CMakeFiles/DataStructureAssignment5.dir/src/Sorting.cpp.s
+.PHONY : src/Sorting.cpp.s
 
 # Help Target
 help:
@@ -212,16 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... DataStructureAssignment4"
+	@echo "... DataStructureAssignment5"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/BinaryTree.o"
-	@echo "... src/BinaryTree.i"
-	@echo "... src/BinaryTree.s"
-	@echo "... src/ItemType.o"
-	@echo "... src/ItemType.i"
-	@echo "... src/ItemType.s"
+	@echo "... src/Sorting.o"
+	@echo "... src/Sorting.i"
+	@echo "... src/Sorting.s"
 .PHONY : help
 
 

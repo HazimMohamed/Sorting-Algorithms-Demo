@@ -67,11 +67,10 @@ void executeCommand(char command, std::vector<int> &toSort) {
                 comparisons = Sorting::heapSort(toSort, 0, toSort.size());
                 break;
             case 'q':
-                comparisons = Sorting::quickSort(toSort, 0, toSort.size(), 0, false);
+                comparisons = Sorting::quickSort(toSort, 0, toSort.size(), false);
                 break;
             case 'p': {
-                long randomPivot = random() % (toSort.size() - 1);
-                comparisons = Sorting::quickSort(toSort, 0, toSort.size(), randomPivot, true);
+                comparisons = Sorting::quickSort(toSort, 0, toSort.size(), true);
             }
                 break;
             default:

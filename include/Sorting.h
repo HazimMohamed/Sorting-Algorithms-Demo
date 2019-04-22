@@ -8,10 +8,14 @@ class Sorting{
 
     static long merge(std::vector<int> &toMerge, long start, long end, long divisionPoint);
 
+    static long reheapDown(std::vector<int> &toHeapDown, long toMove, long end);
+
+    static long quickSortSplit(std::vector<int> &toSplit, long start, long end, long pivot);
+
 public:
     static long mergeSort(std::vector<int> &toSort, long start, long end);
 
-    static long quickSort(std::vector<int> &toSort, long start, long end, long pivot, bool randomPivot);
+    static long quickSort(std::vector<int> &toSort, long start, long end, bool randomPivot);
 
     static long heapSort(std::vector<int> &toSort, long start, long end);
 
