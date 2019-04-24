@@ -1,32 +1,41 @@
+#include <iostream>
 #include "../include/Sorting.h"
 
-long Sorting::quickSortSplit(std::vector<int> &toSplit, long start, long end, long pivot) {
+long Sorting::quickSortSplit(std::vector<int> &toSplit, long start, long end, long &pivot) {
     long comparisons = 0;
     long i = start;
 
-    for(long j = start; j < end - 1; j++){
-        comparisons++;
-        if(toSplit[j] <= toSplit[pivot]){
-            swap(toSplit, pivot, j);
+    swap(toSplit, pivot, end);
+    pivot = toSplit[end];
+
+    for(long j = start; j < end; j++){
+        if(toSplit[j] <= pivot){
+            swap(toSplit, i, j);
             i++;
         }
+        comparisons++;
     }
-    swap(toSplit, i+1, pivot);
+
+    swap(toSplit, i, end);
+    pivot = i;
     return comparisons;
 }
 
 long Sorting::quickSort(std::vector<int> &toSort, long start, long end, bool randomPivot) {
     long comparisons = 0;
 
-    if(end >= start){
+    if(end <= start){
         return comparisons;
     }
+    comparisons++;
 
     long pivot;
+    srand(time(NULL));
+
     if(randomPivot){
-        pivot = (random() % (end-start)) + start;
+        pivot = (rand() % (end-start)) + start;
     } else {
-        pivot = 0;
+        pivot = start;
     }
 
     comparisons += quickSortSplit(toSort, start, end, pivot);
@@ -37,18 +46,18 @@ long Sorting::quickSort(std::vector<int> &toSort, long start, long end, bool ran
 }
 
 long Sorting::selectionSort(std::vector<int> &toSort, long start, long end) {
-    if(end - start == 1){
+    if(end <= start){
         return 0;
     }
 
-    long minIndex = 0;
+    long minIndex = start;
     long comparisons = 0;
 
     for(long i = start; i < end; i++) {
         if(toSort[i] < toSort[minIndex]){
             minIndex = i;
-            comparisons++;
         }
+        comparisons++;
     }
 
     swap(toSort, start, minIndex);
@@ -59,13 +68,13 @@ long Sorting::selectionSort(std::vector<int> &toSort, long start, long end) {
 
 long Sorting::heapSort(std::vector<int> &toSort, long start, long end) {
     long comparisons = 0;
-    long numValues = start - end;
+    long numValues = end - start;
 
     for(long index = numValues/2 - 1; index >= 0; index--){
-        comparisons += reheapDown(toSort, index, end-1);
+        comparisons += reheapDown(toSort, index, numValues-1);
     }
 
-    for(long index = end - 1; index > 0; index--){
+    for(long index = numValues-1; index > 0; index--){
         swap(toSort, 0, index);
         comparisons += reheapDown(toSort, 0, index-1);
     }
@@ -78,28 +87,30 @@ long Sorting::reheapDown(std::vector<int> &toHeapDown, long toMove, long end) {
     long comparisons = 0;
 
     long leftChildIndex = toMove * 2 + 1;
-    long rightChildIndex = toMove * 2 - 1;
+    long rightChildIndex = toMove * 2 + 2;
     long maxChild;
 
-    if (leftChildIndex <= end) {
+    if (leftChildIndex > end) {
         return comparisons;
     }
+    comparisons++;
 
     if(leftChildIndex == end) {
         maxChild = leftChildIndex;
     } else {
-        if(toHeapDown[leftChildIndex] > toHeapDown[rightChildIndex]){
-            maxChild = leftChildIndex;
-        } else {
+        if(toHeapDown[leftChildIndex] <= toHeapDown[rightChildIndex]){
             maxChild = rightChildIndex;
+        } else {
+            maxChild = leftChildIndex;
         }
         comparisons++;
     }
+    comparisons++;
     if(toHeapDown[toMove] < toHeapDown[maxChild]){
         swap(toHeapDown, toMove, maxChild);
         comparisons += reheapDown(toHeapDown, maxChild, end);
-        comparisons++;
     }
+    comparisons++;
 
     return comparisons;
 }
@@ -134,19 +145,25 @@ long Sorting::merge(std::vector<int> &toMerge, long start, long end, long div) {
         k++;
     }
 
+    for(long i = start; i < end; i++){
+        toMerge[i] = temp[i-start];
+    }
+
     return comparisons;
 }
 
 long Sorting::mergeSort(std::vector<int> &toSort, long start, long end) {
+    long comparisons = 0;
+
     if(end <= start) {
         return 0;
     }
+    comparisons ++;
 
-    long comparisons = 0;
-    long divisionPoint = (end-start/2);
+    long divisionPoint = ((end+start)/2);
 
     comparisons += mergeSort(toSort, start, divisionPoint);
-    comparisons += mergeSort(toSort, divisionPoint, end);
+    comparisons += mergeSort(toSort, divisionPoint+1, end);
     comparisons += merge(toSort, start, end, divisionPoint);
 
     return comparisons;

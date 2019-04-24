@@ -10,7 +10,7 @@ class Sorting{
 
     static long reheapDown(std::vector<int> &toHeapDown, long toMove, long end);
 
-    static long quickSortSplit(std::vector<int> &toSplit, long start, long end, long pivot);
+    static long quickSortSplit(std::vector<int> &toSplit, long start, long end, long &pivot);
 
 public:
     static long mergeSort(std::vector<int> &toSort, long start, long end);
